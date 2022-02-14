@@ -17,7 +17,7 @@ long Factorial(int no);
 long nCr(int n, int r);
 
 int main() {
-  int n, r;
+  int n,r;
   std::cout << "Enter a value for n ";
   std::cin >> n;
   std::cout << "Enter a value for r ";
@@ -26,4 +26,23 @@ int main() {
   std::cout << nCr(n,r);
   std::cout << std::endl;
   return 0;
+}
+long nCr(int n,int r)
+{
+  int no,tot,ro,nro;
+  no=Factorial(n);
+  ro=Factorial(r);
+  nro=Factorial(n-r);
+  tot=no/ro*(nro);
+
+  return tot;
+
+}
+long Factorial(int n)
+{
+  int no=1,i;
+  for(i=n;i>1;i--){
+    no=no*i;
+  }
+  return no;
 }
